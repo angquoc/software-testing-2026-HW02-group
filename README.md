@@ -17,7 +17,7 @@ Quy tắc:
 |---|---|---|---|---|---|
 | Trần Thanh An | 23120017 | | | | |
 | Hồ Thùy Hương | 23120046 | | | | |
-| Nguyễn Thị Ánh Ngọc | 23120061 | | | | |
+| Nguyễn Thị Ánh Ngọc | 23120061 | FR-01 Đăng ký | FR-07 Giỏ hàng | FR-17 Quản lý mã giảm giá | FR-04 Hồ sơ cá nhân |
 
 Muốn đổi feature thì báo cả nhóm trước, sau đó sửa bảng này. Lịch sử commit giữ lại mọi thay đổi.
 
@@ -25,14 +25,14 @@ Muốn đổi feature thì báo cả nhóm trước, sau đó sửa bảng này.
 
 ## 2. Repo cá nhân (mỗi người tự tạo)
 
-HW02 là **bài cá nhân**. Đề ghi rõ: chép bài của nhau, **kể cả chép prompt**, thì cả hai người đều bị 0 điểm.
+HW02 là **bài cá nhân**. Đề ghi rõ: Chép bài của nhau, **kể cả chép prompt**, thì cả hai người đều bị 0 điểm.
 
 1. Mỗi người tự tạo một repo **Private** trên GitHub cho bài làm của mình, ví dụ `software-testing-2026-HW02`.
 2. **Không** add thành viên khác vào repo cá nhân, **không** gửi prompt, prompt log hay Agent Skill cho nhau.
 3. Commit theo từng bước của từng feature (đề bắt buộc). Cuối cùng xuất `git log` ra file text để nộp.
 4. Khi review chéo (policy môn học yêu cầu), chỉ gửi nhau **báo cáo** (report, test case, bug report), không gửi prompt.
 
-Những thứ dùng chung trong nhóm: **bảng phân công mục 1**, **quy ước commit mục 3**, **quy ước Issues mục 4**, và **dữ liệu/môi trường EShop**.
+Những thứ dùng chung trong nhóm: **Bảng phân công mục 1**, **quy ước commit mục 3**, **quy ước Issues mục 4**, và **dữ liệu/môi trường EShop**.
 
 ---
 
@@ -82,7 +82,7 @@ Nếu phải sửa lại một bước đã commit thì giữ nguyên tag của 
 
 - Mỗi người chỉ báo bug tìm được **trong feature mình phụ trách**. Mỗi bug là một issue riêng.
 - Trước khi tạo issue, **tìm xem đã có issue tương tự chưa**. Nếu cùng một lỗi cũng xuất hiện ở feature của người khác, ghi `Related #<số issue>` trong phần ghi chú thay vì tạo issue trùng.
-- Bắt buộc dùng template **Bug report**. Phải có **ảnh chụp**: kéo thả ảnh vào ô "Ảnh chụp".
+- Bắt buộc dùng template **Bug report**. Phải có **ảnh chụp**: Kéo thả ảnh vào ô "Ảnh chụp".
 - Tự gán (Assignees) issue cho chính mình.
 
 ### 4.2 Tiêu đề issue
@@ -108,9 +108,37 @@ Ví dụ: `[23120061][FR-09][Web] Mã SAVE10 không áp dụng khi tổng đơn 
 
 Mã FR đã ghi ở tiêu đề nên không cần label riêng cho từng FR.
 
+**Cách gắn label cho mỗi issue:**
+
+- Gắn đủ **4 nhóm**: 1 `severity` + 1 `platform` + ít nhất 1 `technique` + 1 `pool`. Label `bug` được template gắn sẵn.
+- `technique`: Nếu test case phát hiện bug thuộc phần BVA (giá trị biên) thì gắn `technique: BVA`; thuộc lớp tương đương thì gắn `technique: EP`; nếu cả hai đều phát hiện được thì gắn cả hai.
+- `pool` và `platform` phải khớp với bảng phân công ở mục 1. Ví dụ: FR làm trên Mobile thì gắn `pool: D` + `platform: mobile`.
+- Chỉ dùng các label có sẵn. Cần thêm label thì báo nhóm, không tự tạo.
+
+**Chọn severity:** Đi lần lượt từng câu hỏi, gặp câu trả lời "Có" đầu tiên thì dừng.
+
+1. Lỗi làm lộ hoặc mất dữ liệu, vượt quyền, hay chặn hẳn luồng chính (không đăng ký, đăng nhập, mua hàng được)? → `severity: critical`
+2. Hệ thống chấp nhận dữ liệu sai hoặc tính sai mà người dùng không có cách nào tránh? → `severity: high`
+3. Sai quy tắc nghiệp vụ hoặc validation, nhưng vẫn có cách đi vòng để làm đúng? → `severity: medium`
+4. Chỉ sai giao diện, câu chữ, thông báo, không ảnh hưởng dữ liệu? → `severity: low`
+
+Ví dụ một issue đầy đủ: `bug` · `severity: medium` · `platform: web` · `technique: BVA` · `pool: A`
+
+**Màu label** (để cả nhóm nhìn quen mắt):
+
+| Label | Màu |
+|---|---|
+| `severity: critical` | `#B60205` |
+| `severity: high` | `#D93F0B` |
+| `severity: medium` | `#FBCA04` |
+| `severity: low` | `#C2E0C6` |
+| `platform: *` | `#1D76DB` |
+| `technique: *` | `#5319E7` |
+| `pool: *` | `#BFDADC` |
+
 ### 4.4 Trạng thái
 
-- **Open:** mới báo.
+- **Open:** Mới báo.
 - Nếu phát hiện báo nhầm (hiểu sai đặc tả, lỗi do môi trường): **Close as not planned** và ghi lý do.
 - Không xoá issue.
 
@@ -121,4 +149,4 @@ Mã FR đã ghi ở tiêu đề nên không cần label riêng cho từng FR.
 - Tài khoản mặc định: Admin `admin@eshop.com` / `Admin123!` · User `test@eshop.com` / `Test1234!`
   (`setup_guide.md` của EShop ghi mật khẩu admin `admin123` là **sai**, mật khẩu đúng trong DB là `Admin123!`).
 - Reset dữ liệu trước mỗi đợt test: `cd backend && node database.js`.
-- Mobile: sửa `API_URL` trong `frontend-mobile/App.js` thành IP LAN của máy mình. Điện thoại và máy tính dùng chung Wi-Fi.
+- Mobile: Sửa `API_URL` trong `frontend-mobile/App.js` thành IP LAN của máy mình. Điện thoại và máy tính dùng chung Wi-Fi.
