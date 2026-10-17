@@ -1,0 +1,98 @@
+name: Bug report
+description: Báo lỗi tìm được khi kiểm thử EShop (HW02 – Domain Testing)
+title: "[MSSV][FR-xx][Web|Admin|Mobile] "
+labels: ["bug"]
+body:
+  - type: input
+    id: student
+    attributes:
+      label: MSSV người báo
+      placeholder: "23120061"
+    validations:
+      required: true
+  - type: input
+    id: feature
+    attributes:
+      label: Feature (mã FR)
+      placeholder: "FR-09 – Mã giảm giá"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Nền tảng
+      options:
+        - Web
+        - Web Admin
+        - Mobile
+    validations:
+      required: true
+  - type: input
+    id: testcase
+    attributes:
+      label: Test case phát hiện lỗi
+      description: Mã test case trong báo cáo cá nhân
+      placeholder: "FR09-BVA-03"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Mức độ (Severity)
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: precondition
+    attributes:
+      label: Điều kiện tiên quyết
+      placeholder: "Đã reset DB; đăng nhập test@eshop.com; giỏ hàng có ..."
+  - type: textarea
+    id: steps
+    attributes:
+      label: Các bước tái hiện
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: testdata
+    attributes:
+      label: Dữ liệu test
+      placeholder: "Tổng đơn = 300.000₫, mã = SAVE10"
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi (theo đặc tả)
+      description: Trích yêu cầu tương ứng trong README của EShop
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Kết quả thực tế
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Ảnh chụp
+      description: Kéo thả ảnh vào đây (bắt buộc)
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Môi trường
+      placeholder: "Windows 11, Chrome 1xx / Android 1x, Expo Go x.y"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Ghi chú
+      description: "Related #<số issue> nếu cùng lỗi đã được báo ở feature khác"
