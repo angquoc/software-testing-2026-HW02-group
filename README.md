@@ -1,9 +1,10 @@
-# HW02 – Domain Testing on EShop · Repo chung của nhóm
+# HW02 Domain Testing on EShop: Repo chung của nhóm
 
 Repo này **chỉ dùng cho GitHub Issues** (bug report của cả nhóm) và bảng phân công feature.
 Bài làm của mỗi người nằm ở **repo cá nhân riêng** (xem mục 2).
 
-SUT: [EShop](https://github.com/ttbhanh/eshop-sut) · Đặc tả (oracle): `README.md` của repo EShop
+- SUT: [EShop](https://github.com/ttbhanh/eshop-sut)
+- Đặc tả (oracle): `README.md` của repo EShop
 
 ---
 
@@ -122,7 +123,7 @@ Mã FR đã ghi ở tiêu đề nên không cần label riêng cho từng FR.
 3. Sai quy tắc nghiệp vụ hoặc validation, nhưng vẫn có cách đi vòng để làm đúng? → `severity: medium`
 4. Chỉ sai giao diện, câu chữ, thông báo, không ảnh hưởng dữ liệu? → `severity: low`
 
-Ví dụ một issue đầy đủ: `bug` · `severity: medium` · `platform: web` · `technique: BVA` · `pool: A`
+Ví dụ một issue đầy đủ: `bug`, `severity: medium`, `platform: web`, `technique: BVA`, `pool: A`
 
 **Màu label** (để cả nhóm nhìn quen mắt):
 
@@ -146,7 +147,7 @@ Ví dụ một issue đầy đủ: `bug` · `severity: medium` · `platform: web
 
 ## 5. Môi trường EShop dùng chung
 
-- Tài khoản mặc định: Admin `admin@eshop.com` / `Admin123!` · User `test@eshop.com` / `Test1234!`
+- Tài khoản mặc định: Admin `admin@eshop.com` / `Admin123!`; User `test@eshop.com` / `Test1234!`
   (`setup_guide.md` của EShop ghi mật khẩu admin `admin123` là **sai**, mật khẩu đúng trong DB là `Admin123!`).
 - Reset dữ liệu trước mỗi đợt test: `cd backend && node database.js`.
 - Mobile: Sửa `API_URL` trong `frontend-mobile/App.js` thành IP LAN của máy mình. Điện thoại và máy tính dùng chung Wi-Fi.
