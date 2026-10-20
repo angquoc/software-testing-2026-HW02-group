@@ -17,7 +17,7 @@ Quy tắc:
 | Thành viên | MSSV | Pool A (Web) | Pool B (Web) | Pool C (Web Admin) | Pool D (Mobile) |
 |---|---|---|---|---|---|
 | Trần Thanh An | 23120017 | | | | |
-| Hồ Thùy Hương | 23120046 | | | | |
+| Hồ Thùy Hương | 23120046 | FR-03 Quên & đặt lại mật khẩu | FR-08 Thanh toán | FR-15 Quản lý sản phẩm | FR-10 Trạng thái đơn hàng (hủy đơn, FR-20) |
 | Nguyễn Thị Ánh Ngọc | 23120061 | FR-01 Đăng ký | FR-07 Giỏ hàng | FR-17 Quản lý mã giảm giá | FR-04 Hồ sơ cá nhân |
 
 Muốn đổi feature thì báo cả nhóm trước, sau đó sửa bảng này. Lịch sử commit giữ lại mọi thay đổi.
